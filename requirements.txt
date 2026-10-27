@@ -1,0 +1,14 @@
+Django>=5.2,<6.3
+dj-database-url>=2.2,<4
+psycopg[binary]>=3.2,<4
+python-dotenv>=1.0,<2
+scikit-learn>=1.6,<2
+PyMuPDF>=1.25,<2
+Pillow>=11,<13
+pytesseract>=0.3.13,<1
+requests>=2.32,<3
+beautifulsoup4>=4.13,<5
+feedparser>=6.0,<7
+telethon>=1.40,<2
+whitenoise>=6.9,<7
+gunicorn>=23,<24

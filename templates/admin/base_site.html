@@ -1,0 +1,18 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{{ title }} | ExamGuard AI{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'admin/css/examguard.css' %}">
+{% endblock %}
+
+{% block branding %}
+<div class="ega-brand">
+  <span class="ega-mark">EG</span>
+  <div><strong>ExamGuard AI</strong><small>Question Paper Leak Intelligence</small></div>
+</div>
+{% endblock %}
+
+{% block nav-global %}<span class="ega-status"><i></i> Monitoring controls active</span>{% endblock %}

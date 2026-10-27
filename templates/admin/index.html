@@ -1,0 +1,37 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block content %}
+<section class="ega-hero">
+  <div><span class="ega-eyebrow">OPERATIONS OVERVIEW</span><h1>Leak Intelligence Command</h1><p>Monitor authorized sources, compare captured evidence, and coordinate incident response.</p></div>
+  <div class="ega-clock">Evidence-led · Human verified</div>
+</section>
+
+{% if examguard_metrics %}
+<section class="ega-metrics">
+  <article><span>Active exams</span><strong>{{ examguard_metrics.active_exams }}</strong></article>
+  <article><span>Protected papers</span><strong>{{ examguard_metrics.protected_papers }}</strong></article>
+  <article><span>Enabled sources</span><strong>{{ examguard_metrics.enabled_sources }}</strong></article>
+  <article class="warn"><span>Pending matches</span><strong>{{ examguard_metrics.pending_matches }}</strong></article>
+  <article class="danger"><span>Open incidents</span><strong>{{ examguard_metrics.open_incidents }}</strong></article>
+  <article><span>Captured items</span><strong>{{ examguard_metrics.total_uploads }}</strong></article>
+</section>
+{% endif %}
+
+<div id="content-main" class="ega-main-grid">
+  {% include "admin/app_list.html" with app_list=app_list show_changelinks=True %}
+  <aside class="ega-guide">
+    <h2>Response workflow</h2>
+    <ol>
+      <li><b>Configure</b><span>Add only public or explicitly authorized sources.</span></li>
+      <li><b>Protect</b><span>Upload and process reference papers/questions.</span></li>
+      <li><b>Detect</b><span>Run authorized monitors or receive official webhooks.</span></li>
+      <li><b>Verify</b><span>Review similarity evidence before confirmation.</span></li>
+      <li><b>Respond</b><span>Assign, contain, preserve evidence and resolve.</span></li>
+    </ol>
+    <p class="ega-note">Automated findings are preliminary. A designated officer must confirm an official leak.</p>
+  </aside>
+</div>
+{% endblock %}
+
+{% block sidebar %}{% endblock %}

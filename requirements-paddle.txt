@@ -1,0 +1,3 @@
+-r requirements.txt
+paddleocr>=3.2,<4
+# Install the matching CPU/GPU PaddlePaddle wheel for your OS from the official PaddlePaddle installation guide.
